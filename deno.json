@@ -1,0 +1,6 @@
+{
+  "tasks": {
+    "build": "wasm-pack build --target web",
+    "test": "deno run -A ./deno_test/test.ts"
+  }
+}
