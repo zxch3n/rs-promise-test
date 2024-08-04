@@ -1,4 +1,4 @@
-import { copy_file, initSync } from "../pkg/r.js";
+import { copy_file, copy_file_sync, initSync } from "../pkg/r.js";
 
 const wasm = Deno.readFileSync("./pkg/r_bg.wasm");
 initSync(wasm.buffer);
@@ -11,4 +11,4 @@ globalThis.writeFile = (path: string, content: string) => {
   return Deno.writeTextFile(path, content);
 };
 
-copy_file("assets/test.txt", "assets/test2.txt");
+copy_file_sync("assets/test.txt", "assets/test2.txt");
